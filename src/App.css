@@ -1,38 +1,83 @@
-.App {
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  background-color: aqua;
+}
+.heading {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 25px 42px;
+  margin-bottom: 2rem;
+}
+.card {
+  background-color: white;
+  width: 400px;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+}
+img {
+  border-radius: 7px;
+}
+.inner {
+  display: flex;
+  padding: 7px 0px;
+  width: 250px;
+  gap: 6px;
+  flex-direction: column;
 }
 
-.App-link {
-  color: #61dafb;
+.card img {
+  width: 150px;
+  height: 150px;
+}
+.name {
+  font-size: 24px;
+  font-weight: 600;
+  padding: 6px;
+}
+.followers {
+  margin-left: 45px;
+  font-size: 16px;
+}
+.social-numbers {
+  background-color: #c8c2c2;
+  display: flex;
+  flex-direction: row;
+  border-radius: 4px;
+  gap: 20px;
+  padding: 8px;
+  color: #282727;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 1024px) {
+  .card {
+    width: 350px;
+    padding: 12px;
   }
-  to {
-    transform: rotate(360deg);
+  .card img {
+    width: 120px;
+    height: 120px;
+  }
+  .inner {
+    display: flex;
+    padding: 0px 0px;
+    width: 220px;
+    gap: 0px;
+    flex-direction: column;
+  }
+  .social-numbers {
+    gap: 14px;
+    padding: 4px;
+  }
+  .followers {
+    margin-bottom: 1px;
   }
 }

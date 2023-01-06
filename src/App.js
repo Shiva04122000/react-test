@@ -1,24 +1,47 @@
-import logo from './logo.svg';
+import { useState } from 'react'
 import './App.css';
+import data from './data.json'
+
 
 function App() {
+
+  const [user, setUser] = useState(data);
+  console.log(user)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1 className='heading'>List of Github Users</h1>
+      <div className="main">
+
+        {user.map((currElem) => {
+          return (
+            <div className="card">
+              <img src={currElem.avatar_url} alt="" />
+              <div className="inner">
+                <span className='name'>{currElem.login}</span>
+                <span className='followers'>following/other_user</span>
+                <div className="social-numbers">
+                  <div className="article">
+                    Articles <br />
+                    38
+                  </div>
+                  <div className="follower">
+                    follower <br />
+                    980
+                  </div>
+                  <div className="following">
+                    following <br />
+                    80
+                  </div>
+                </div>
+              </div>
+            </div>
+          )
+        })}
+        
+      </div>
+    </>
+
   );
 }
 
